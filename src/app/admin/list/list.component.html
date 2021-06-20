@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+<div class="conatainer">
+    <mat-card>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">contact</th>
+                    <th scope="col">city</th>
+
+                    <th scope="col"></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users;  let i = index">
+                    <th scope="row">{{u.userName}}</th>
+                    <td>{{u.email}}</td>
+                    <td>{{u.contact}}</td>
+                    <td>{{u.city}}</td>
+
+                    <td><a [routerLink]="['edit']" [state]="u">Edit</a> </td>
+                   
+                    <td><button mat-fab color="warn" aria-label="Example icon button with a delete icon"
+                            (click)="onDelete(u)">
+                            <mat-icon>delete</mat-icon>
+                        </button></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </mat-card>
+</div>
